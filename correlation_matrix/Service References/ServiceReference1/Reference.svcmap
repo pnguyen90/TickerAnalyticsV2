@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="013b35aa-b984-4ba9-b9d8-d9b9b4f23364" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/TickerAnalytics/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="3aae2a0d-f865-4e7d-bf7f-8206229701f1" SourceId="1" SourceUrl="http://localhost:8000/TickerAnalytics/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="41ad0da8-c7ac-4f7a-b182-4d0dc217358f" SourceId="1" SourceUrl="http://localhost:8000/TickerAnalytics/?xsd=xsd0" />
+    <MetadataFile FileName="DataBase.wsdl" MetadataType="Wsdl" ID="ebfcf7c0-909c-49fb-bf0f-938451ad7ba0" SourceId="1" SourceUrl="http://localhost:8000/TickerAnalytics/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="6abe055c-536c-4451-8698-f5a4f7ed80d1" SourceId="1" SourceUrl="http://localhost:8000/TickerAnalytics/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="a400e0ed-5074-41a9-b887-2c49b59f0d04" SourceId="1" SourceUrl="http://localhost:8000/TickerAnalytics/?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
