@@ -19,6 +19,9 @@ using System.Net;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Data_load_utility
 {
@@ -76,8 +79,6 @@ namespace Data_load_utility
            
             // Get the response.
             WebResponse response = request.GetResponse();
-            // Display the status.
-            Console.WriteLine(((HttpWebResponse)response).ContentType);
             // Get the stream containing content returned by the server.
             Stream dataStream = response.GetResponseStream();
             // Open the stream using a StreamReader for easy access.
@@ -91,11 +92,45 @@ namespace Data_load_utility
             XElement xmlDoc = XElement.Parse(@responseFromServer);
             XElement result = xmlDoc.Element("results");
             IEnumerable<XElement> quotes = result.Elements();
+            //preparing the in memory table to load into TickerData table in SQL Server
+            DataTable payload = new DataTable();
+            payload.Columns.Add("Ticker", typeof(String));
+            payload.Columns.Add("Date", typeof(DateTime));
+            payload.Columns.Add("Time", typeof(String));
+            payload.Columns.Add("Price", typeof(Decimal));
+
             foreach (XElement x in quotes)
             {
-                Console.WriteLine(x.Attribute("Symbol").Value);
-                Console.WriteLine(x.Element("Date").Value);
+                object[] record = new object[] { x.Attribute("Symbol").Value, 
+                                                Convert.ToDateTime(x.Element("Date").Value) ,
+                                                "16:00:00",
+                                                Decimal.Parse(x.Element("Close").Value) };
+                payload.LoadDataRow(record,true);
                
+            }
+            
+            var connection = ConfigurationManager.ConnectionStrings["StocksEntities"].ConnectionString;
+
+            using (SqlConnection destination = new SqlConnection(connection))
+            {
+                destination.Open();
+                using (SqlBulkCopy loader = new SqlBulkCopy(destination))
+                {
+                    loader.DestinationTableName = "dbo.TickerData";
+                    try
+                    {
+                        // Write from the source to the destination.
+                        loader.WriteToServer(payload);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    finally
+                    {
+                        reader.Close();
+                    }
+                }
             }
 
       
