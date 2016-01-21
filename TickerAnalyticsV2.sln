@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "k_means_cluster", "k_means_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatisticsAPI", "..\TickerAnalytics\StatisticsAPI\StatisticsAPI.csproj", "{080A5F51-16B9-4FED-88EF-11F1EA0923B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data_load_utility", "Data_load_utility\Data_load_utility.csproj", "{4C9D7EAC-B8A6-4373-A535-9D7DCB37FF5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{080A5F51-16B9-4FED-88EF-11F1EA0923B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{080A5F51-16B9-4FED-88EF-11F1EA0923B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{080A5F51-16B9-4FED-88EF-11F1EA0923B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C9D7EAC-B8A6-4373-A535-9D7DCB37FF5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C9D7EAC-B8A6-4373-A535-9D7DCB37FF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C9D7EAC-B8A6-4373-A535-9D7DCB37FF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C9D7EAC-B8A6-4373-A535-9D7DCB37FF5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

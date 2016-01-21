@@ -1,0 +1,13 @@
+﻿<Window x:Class="Data_load_utility.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="Upload file" HorizontalAlignment="Left" Margin="96,77,0,0" VerticalAlignment="Top" Width="75" Click="handleFileInput"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="filepath" HorizontalScrollBarVisibility="Auto"/>
+        <DatePicker Name="Date1" HorizontalAlignment="Left" Margin="96,165,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="Date2" HorizontalAlignment="Left" Margin="279,165,0,0" VerticalAlignment="Top"/>
+        <Button Content="Load Data" HorizontalAlignment="Left" Margin="96,220,0,0" VerticalAlignment="Top" Width="75" Click="dataLoad"/>
+
+    </Grid>
+</Window>

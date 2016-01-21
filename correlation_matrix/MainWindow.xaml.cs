@@ -38,8 +38,8 @@ namespace correlation_matrix
             char[] delimit = { ',' };
 
             string[] tickerArray = ticker.Split(delimit);
-            DateTime start = Date1.DisplayDate;
-            DateTime end = Date2.DisplayDate;
+            DateTime start = (DateTime)Date1.SelectedDate;
+            DateTime end = (DateTime)Date2.SelectedDate;
 
 
 

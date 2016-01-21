@@ -65,8 +65,8 @@ namespace k_means_cluster
             //start our database connection proxy
             DataBaseClient client = new DataBaseClient();
 
-            DateTime d1 = date1.DisplayDate;
-            DateTime d2 = date2.DisplayDate;
+            DateTime d1 = (DateTime)date1.SelectedDate;
+            DateTime d2 = (DateTime)date2.SelectedDate;
             string x_ticker = xcoor.Text;
             string y_ticker = ycoor.Text;
             decimal[] x_vector = client.getPriceArray(x_ticker, d1, d2);
