@@ -15,7 +15,6 @@ namespace DatabaseAPI
 
         public decimal[] getPriceArray(String ticker, DateTime start, DateTime end)
         {
-            Console.WriteLine("Connected.");
             decimal[] priceArray;
             
             using (StocksEntities context = new StocksEntities())
@@ -26,7 +25,7 @@ namespace DatabaseAPI
                                 record.Ticker == ticker &&
                                 record.Date >= start &&
                                 record.Date <= end
-
+                            orderby  record.Date
                             select record.Price;
 
                 priceArray = query.ToArray();
