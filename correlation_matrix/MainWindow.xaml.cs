@@ -66,7 +66,7 @@ namespace correlation_matrix
                 else
                 //all other rows contain correlation coefficents
                 {
-                    decimal[] stock1;
+                    decimal[] stock1 = client.getPriceArray(tickerArray[row - 2], start, end); ;
                     decimal[] stock2;
                     decimal coefficient;
                     for (var column = 1; column <= columns; column++)
@@ -79,12 +79,18 @@ namespace correlation_matrix
                         //Then uses statsAPI to get coefficent
                         else if (column >= row)
                         {
+                            if (column == row)
+                            {
+                                data[row - 1, column - 1] = 1;
+                            }
 
-                            stock1 = client.getPriceArray(tickerArray[row - 2], start, end);
-                            stock2 = client.getPriceArray(tickerArray[column - 2], start, end);
-                            coefficient = Statistics.correlation(stock1, stock2);
+                            else
+                            {
+                                stock2 = client.getPriceArray(tickerArray[column - 2], start, end);
+                                coefficient = Statistics.correlation(stock1, stock2);
 
-                            data[row - 1, column - 1] = coefficient;
+                                data[row - 1, column - 1] = coefficient;
+                            }
                         }
                     }
                     
